@@ -1,17 +1,12 @@
-import React from 'react';
 import './App.css';
-import Vehicle from './pages/Vehicles/Vehicle';
-import Driver from './pages/Drivers/Driver';
-import Header from './components/organisms/Header/Header';
-
+import AppRoutes from './routes';
+import Header from './components/organisms/Header';
 function App() {
   return (
-    <div className="App">
-
-      <Header/>
-      <Vehicle/>
-      <Driver/>
-    </div>
+    <>
+    <Header/>
+    <AppRoutes/>
+    </>
   );
 }
 

@@ -32,10 +32,10 @@ export default function Header(props: Props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", p: "2rem", }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", p: "2rem" }}>
       <img src={Logo} height={60} width={150} alt="Logo" />
       <Divider />
-      
+
       <Box
         sx={{
           display: { display: "flex", flexDirection: "column" },
@@ -92,16 +92,35 @@ export default function Header(props: Props) {
       </Box>
 
       <Box>
-      <Grid item xs sx={{ display: { md: 'none' , sm: 'block', xs: 'block', position: 'absolute',bottom: '48px', left: '130px'} }}>
-                <Button
-                    href='https://www.linkedin.com/company/gobrax/'
-                    target='_blank'
-                    variant='contained'
-                    style={{ backgroundColor: '#1323B0', color: 'white', letterSpacing: 'normal', textTransform: 'none', fontWeight: 'bold' }}
-                >
-                    LinkedIn
-                </Button>
-            </Grid>
+        <Grid
+          item
+          xs
+          sx={{
+            display: {
+              md: "none",
+              sm: "block",
+              xs: "block",
+              position: "absolute",
+              bottom: "48px",
+              left: "130px",
+            },
+          }}
+        >
+          <Button
+            href="https://www.linkedin.com/company/gobrax/"
+            target="_blank"
+            variant="contained"
+            style={{
+              backgroundColor: "#1323B0",
+              color: "white",
+              letterSpacing: "normal",
+              textTransform: "none",
+              fontWeight: "bold",
+            }}
+          >
+            LinkedIn
+          </Button>
+        </Grid>
       </Box>
     </Box>
   );
@@ -110,9 +129,9 @@ export default function Header(props: Props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex" , position:'relative'}}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" sx={{position: 'relative'}}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -132,7 +151,7 @@ export default function Header(props: Props) {
             }}
           >
             <Button
-              href="/pages/Drivers"
+              href="/motoristas"
               variant="text"
               style={{
                 color: "black",
@@ -144,7 +163,7 @@ export default function Header(props: Props) {
               Motoristas
             </Button>
             <Button
-              href="/pages/Vehicles"
+              href="/veiculos"
               variant="text"
               style={{
                 color: "black",
@@ -195,10 +214,10 @@ export default function Header(props: Props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true, 
           }}
           sx={{
-            display: { xs: "block", sm: "none", position:'relative' },
+            display: { xs: "block", sm: "none", position: "relative" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
